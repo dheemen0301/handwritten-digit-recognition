@@ -29,7 +29,7 @@ model.evaluate(X_test_flattened,y_test)
 y_predicted = model.predict(X_test_flattened)
 y_predicted_labels = [np.argmax(i) for i in y_predicted]
 cm = tf.math.confusion_matrix(labels=y_test,predictions=y_predicted_labels)
-
+import seaborn as sn
 plt.figure(figsize = (10,7))
 sn.heatmap(cm, annot=True, fmt='d')
 plt.xlabel('Predicted')
